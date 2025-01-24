@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Określenie wersji modelu POM -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Podstawowe informacje o projekcie -->
+    <groupId>Students</groupId> <!-- Identyfikator grupy projektu -->
+    <artifactId>ProjektJava</artifactId> <!-- Identyfikator artefaktu projektu -->
+    <version>1.0-SNAPSHOT</version> <!-- Wersja projektu-->
+
+    <!-- Właściwości kompilatora Maven -->
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source> <!-- Wersja źródłowa języka Java -->
+        <maven.compiler.target>11</maven.compiler.target> <!-- Docelowa wersja języka Java -->
+    </properties>
+
+    <!-- Repozytoria Maven -->
+    <repositories>
+        <repository>
+            <id>central</id> <!-- Domyślne repozytorium Maven -->
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <!-- Zależności projektu -->
+    <dependencies>
+        <dependency>
+            <groupId>org.xerial</groupId> <!-- Grupa zależności SQLite JDBC -->
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.43.2.0</version> <!-- Wersja SQLite JDBC -->
+        </dependency>
+    </dependencies>
+
+    <!-- Sekcja budowania projektu -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId> <!-- Grupa wtyczki Exec Maven Plugin -->
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version> <!-- Wersja wtyczki -->
+
+                <configuration>
+                    <mainClass>StudentManagementGUI</mainClass> <!-- Główna klasa aplikacji -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
